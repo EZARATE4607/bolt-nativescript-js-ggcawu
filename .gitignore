@@ -1,0 +1,44 @@
+# NativeScript
+hooks/
+node_modules/
+platforms/
+App_Resources/iOS/build.xcconfig
+
+# NativeScript build artifacts
+/dist
+/tmp
+/out-tsc
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# iOS
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Xcode
+xcuserdata/
+*.xcworkspace/
+*.xcodeproj/
+DerivedData/
+build/
+
+# Local configuration
+*.env
+*.env.local

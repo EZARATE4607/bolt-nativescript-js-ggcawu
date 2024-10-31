@@ -1,0 +1,32 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="MotoApp Simulator" icon="" />
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="Device Role" class="text-lg font-bold mb-2" />
+            <Button text="{{ deviceRole }}" tap="{{ toggleDeviceRole }}" class="mb-4" />
+
+            <Label text="Ignition Status" class="text-lg font-bold mb-2" />
+            <Button text="{{ ignitionStatus ? 'ON' : 'OFF' }}" tap="{{ toggleIgnition }}" class="mb-4" />
+
+            <Label text="Connection Status" class="text-lg font-bold mb-2" />
+            <Button text="{{ isConnected ? 'Connected' : 'Disconnected' }}" tap="{{ toggleConnection }}" class="mb-4" />
+
+            <Label text="Speed Simulation" class="text-lg font-bold mb-2" />
+            <Slider value="{{ speed }}" minValue="0" maxValue="100" class="mb-4" />
+            <Label text="{{ 'Current Speed: ' + speed + ' km/h' }}" class="mb-4" />
+
+            <Label text="System Status" class="text-lg font-bold mb-2" />
+            <Label text="{{ systemStatus }}" textWrap="true" class="mb-4" />
+
+            <StackLayout visibility="{{ deviceRole === 'slave' ? 'visible' : 'collapsed' }}">
+                <Label text="Recording Status" class="text-lg font-bold mb-2" />
+                <Label text="{{ recordingStatus }}" textWrap="true" class="mb-4" />
+            </StackLayout>
+
+            <StackLayout visibility="{{ deviceRole === 'master' ? 'visible' : 'collapsed' }}">
+                <Label text="Focus Mode" class="text-lg font-bold mb-2" />
+                <Label text="{{ focusMode }}" textWrap="true" class="mb-4" />
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</Page>
